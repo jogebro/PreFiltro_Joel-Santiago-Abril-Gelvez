@@ -3,35 +3,39 @@ const { model, Schema } = require('mongoose');
 const GameSchema = Schema({
     Nombre: {
         type: String,
-        required: [true, "Nombre del Juego REQUERIDO"]
+        required: true
     },
     Imagen: {
         type: String,
-        required: false
+        required: false,
+        default: ''
     },
     Plataforma: {
         type: String,
-        required: [true, "Plataforma del Juego REQUERIDA"]
+        required: true
     },
     Genero: {
         type: String,
-        required: false
+        required: true
     },
     Clasificacion: {
-        type: String,
-        required: [true, "Clasificacion del Juego REQUERIDA"]
+        type: Schema.Types.ObjectId,
+        ref: 'Clasificacion',
+        transform: doc => doc.Clasificacion,
+        required: true
     },
     Descripcion: {
         type: String,
-        required: false
+        required: false,
+        default: ''
     },
     Precio: {
         type: Number,
-        required: [true, "Precio del Juego REQUERIDO"]
+        required: true
     },
     Stock: {
         type: String,
-        required: false
+        required: true
     }
 })
 

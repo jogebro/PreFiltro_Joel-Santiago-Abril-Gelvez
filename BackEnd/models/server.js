@@ -8,6 +8,9 @@ class Server {
         this.port = process.env.PORT;
         this.paths = {
             games: "/games",
+            plataformas: "/plataformas",
+            generos: "/generos",
+            clasificaciones: "/clasificaciones",
         };
         this.connectDB();
         this.middleware();
@@ -25,7 +28,10 @@ class Server {
     }
 
     routes(){
-        this.app.use(this.paths.games, require('../routers/games.routes.js'))
+        this.app.use(this.paths.games, require('../routers/games.routes.js'));
+        this.app.use(this.paths.plataformas, require('../routers/plataformas.routes.js'));
+        this.app.use(this.paths.generos, require('../routers/generos.routes.js'));
+        this.app.use(this.paths.clasificaciones, require('../routers/clasificaciones.routes.js'));
     }
 
     listen(){
