@@ -8,14 +8,14 @@ const GameSchema = Schema({
     Imagen: {
         type: String,
         required: false,
-        default: ''
+        default: 'no-image.jpg'
     },
     Plataforma: {
-        type: String,
+        type: Array,
         required: true
     },
     Genero: {
-        type: String,
+        type: Array,
         required: true
     },
     Clasificacion: {
