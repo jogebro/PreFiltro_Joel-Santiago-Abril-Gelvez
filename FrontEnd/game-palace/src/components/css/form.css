@@ -1,3 +1,28 @@
-#formulario label{
+#formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 180px 25%;
+}
+
+#formulario label {
     color: white;
+    display: flex;
+}
+
+#formulario input {
+    width: 25rem;
+    height: 28px;
+}
+
+#formulario select {
+    width: 25.2rem;
+    height: 32px;
+}
+
+#formulario button {
+    margin-top: 20px;
+    width: 25.2rem;
+    height: 28px;
+    cursor: pointer;
 }
